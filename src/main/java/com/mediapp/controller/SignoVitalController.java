@@ -66,7 +66,7 @@ public class SignoVitalController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Object> eliminar(Integer id) {
+	public ResponseEntity<Object> eliminar(@PathVariable("id") Integer id) {
 		SignoVital signoVital = this.service.leerPorId(id);
 		if (signoVital == null) {
 			throw new ModelNotFoundException("ID NO ENCONTRADO: "+id);
